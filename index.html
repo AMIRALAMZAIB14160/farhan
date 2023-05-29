@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+<title>Age Calculator</title>
+</head>
+<body>
+<h1>Age Calculator</h1>
+<p>Enter your date of birth:</p>
+<input type="text" id="dob" />
+<p>Enter the current date:</p>
+<input type="text" id="today" />
+<p>Calculating...</p>
+<p id="result"></p>
+<script>
+function calculateAge() {
+  var dob = document.getElementById("dob").value;
+  var today = document.getElementById("today").value;
+
+  var date1 = new Date(dob);
+  var date2 = new Date(today);
+
+  var diff = date2 - date1;
+
+  var years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  var months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  var weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
+  var days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("result").innerHTML = "Your age is:<br />Years: " + years + "<br />Months: " + months + "<br />Weeks: " + weeks + "<br />Days: " + days + "<br />Hours: " + hours + "<br />Minutes: " + minutes + "<br />Seconds: " + seconds;
+}
+</script>
+</body>
+</html>
+
+</body>
+</html>
